@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Site du Pasteur [Nom]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="dons.html">Faire un don</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="contact">
+            <h2>Nous contacter</h2>
+            <p>N'hésitez pas à nous contacter pour toute question ou information.</p>
+            
+            <div class="contact-info">
+                <h3>Coordonnées</h3>
+                <p>Adresse : [Adresse de l'église]</p>
+                <p>Téléphone : [Numéro de téléphone]</p>
+                <p>Email : [Adresse email]</p>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Formulaire de contact</h3>
+                <form action="https://formspree.io/VOTRE_EMAIL" method="POST">
+                    <div>
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    <div>
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 - Site du Pasteur [Nom]</p>
+    </footer>
+</body>
+</html>
