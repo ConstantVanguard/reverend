@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Faire un don - Site du Pasteur [Nom]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Faire un don</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="dons.html">Faire un don</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="donations">
+            <h2>Soutenez notre ministère</h2>
+            <p>Votre soutien est précieux pour nous permettre de continuer notre mission.</p>
+            
+            <div class="donation-options">
+                <h3>Faire un don via PayPal</h3>
+                
+                <!-- Bouton PayPal - Remplacez avec votre propre code PayPal -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_donations" />
+                    <input type="hidden" name="business" value="VOTRE_EMAIL_PAYPAL" />
+                    <input type="hidden" name="currency_code" value="EUR" />
+                    <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faire un don avec PayPal" />
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 - Site du Pasteur [Nom]</p>
+    </footer>
+</body>
+</html>
