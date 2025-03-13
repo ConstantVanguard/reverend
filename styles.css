@@ -1,69 +1,185 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révérend Constant - Services Religieux</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1>Révérend Constant</h1>
-        </div>
-        <div class="collar-design"></div>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section class="intro">
-        <div class="photo-container">
-            <img src="reverend_enhanced.jpg" alt="Révérend Constant" class="profile-photo">
-        </div>
-        <div class="welcome-text">
-            <h2>Bienvenue</h2>
-            <p>Pasteur protestant ordonné, je suis au service de tous les chrétiens qui souhaitent vivre leur foi en dehors des cadres traditionnels. Ma mission est d'accompagner chaque croyant dans son cheminement spirituel, en respectant sa tradition et sa vision personnelle de la foi.</p>
-        </div>
-    </section>
+body {
+    font-family: 'Cinzel', serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <section class="services">
-        <h2>Mes Services</h2>
-        <div class="service-tabs">
-            <div class="service-tab">
-                <img src="mariage.jpg" alt="Mariage">
-                <h3>Mariage</h3>
-            </div>
-            <div class="service-tab">
-                <img src="bapteme.jpg" alt="Baptême">
-                <h3>Baptême</h3>
-            </div>
-            <div class="service-tab">
-                <img src="confirmation.jpg" alt="Confirmation">
-                <h3>Confirmation</h3>
-            </div>
-            <div class="service-tab">
-                <img src="enterrement.jpg" alt="Funérailles">
-                <h3>Funérailles</h3>
-            </div>
-            <div class="service-tab">
-                <img src="guidance.jpg" alt="Accompagnement Spirituel">
-                <h3>Accompagnement Spirituel</h3>
-            </div>
-        </div>
-    </section>
+/* Header avec design de col romain */
+header {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}
 
-    <section class="location">
-        <h2>Lieu de Culte</h2>
-        <p>Services disponibles à votre domicile ou dans le lieu de votre choix.</p>
-    </section>
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+}
 
-    <footer>
-        <div class="footer-links">
-            <a href="agenda.html">Agenda</a>
-            <a href="dons.html">Faire un don</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    padding: 15px;
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid gold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid gold;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a3c6e; /* Bleu foncé */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #1a3c6e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.photo-container {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.welcome-text {
+    flex: 2;
+    padding: 0 30px;
+}
+
+.services {
+    padding: 40px;
+    background-color: white;
+}
+
+.service-tabs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-tab {
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-tab:hover {
+    transform: translateY(-5px);
+}
+
+.service-tab img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-tab h3 {
+    color: #1a3c6e;
+}
+
+.location {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+footer {
+    background-color: #1a3c6e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        width: 80%;
+        flex-direction: column;
+    }
+    
+    header::before, header::after {
+        width: 15%;
+    }
+    
+    .intro {
+        flex-direction: column;
+    }
+    
+    .welcome-text {
+        padding: 20px 0 0 0;
+    }
+    
+    .service-tabs {
+        justify-content: center;
+    }
+}
