@@ -14,29 +14,65 @@ body {
     overflow: hidden;
 }
 
-/* En-tête */
+/* En-tête style col romain avec dorures */
 header {
-    background: linear-gradient(to right, #1a3c8a, #ffffff);
-    color: #ffffff;
+    background: linear-gradient(to right, #000000 20%, #ffffff 20%);
+    color: #000000;
     padding: 20px 0;
     text-align: center;
-    border-bottom: 5px solid #d4af37;
+    border-bottom: 8px solid #d4af37; /* Bordure dorée plus épaisse */
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #d4af37; /* Seconde ligne dorée */
+    box-shadow: 0 0 10px #d4af37; /* Effet de brillance dorée */
 }
 
 .logo {
     width: 100px;
     height: auto;
     margin: 10px;
+    border: 3px solid #d4af37; /* Bordure dorée autour du logo */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Halo doré */
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* Ombre dorée */
 }
 
 .title {
     margin-left: 20px;
+}
+
+.title h1 {
+    color: #000000;
+    text-shadow: 1px 1px 2px #d4af37; /* Ombre de texte dorée */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.title p {
+    color: #1a3c8a;
+    font-style: italic;
+    border-bottom: 2px solid #d4af37; /* Soulignement doré */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 /* Navigation */
@@ -44,6 +80,8 @@ nav {
     background-color: #1a3c8a;
     overflow: hidden;
     text-align: center;
+    border-top: 3px solid #d4af37;
+    border-bottom: 3px solid #d4af37;
 }
 
 nav a {
@@ -54,11 +92,28 @@ nav a {
     text-decoration: none;
     font-size: 18px;
     transition: 0.3s;
+    position: relative;
 }
 
 nav a:hover {
     background-color: #d4af37;
     color: #1a3c8a;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
 }
 
 /* Section principale */
@@ -73,6 +128,7 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d4af37;
 }
 
 .welcome h2 {
@@ -88,6 +144,7 @@ nav a:hover {
     border-radius: 5px;
     border: 3px solid #d4af37;
     margin: 20px 0;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 /* Services */
@@ -107,11 +164,13 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    border: 1px solid #d4af37;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    border: 1px solid #d4af37;
 }
 
 .service-card img {
@@ -120,11 +179,14 @@ nav a:hover {
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
+    border: 2px solid #d4af37;
 }
 
 .service-card h3 {
     color: #1a3c8a;
     margin: 10px 0;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 5px;
 }
 
 .service-card a {
@@ -136,10 +198,12 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    border: 1px solid #d4af37;
 }
 
 .service-card a:hover {
     background-color: #d4af37;
+    color: #1a3c8a;
 }
 
 /* Pied de page */
@@ -159,6 +223,71 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
+    border: 1px solid #d4af37;
+}
+
+.service-page h2 {
+    color: #1a3c8a;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.service-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    border: 3px solid #d4af37;
+    margin: 20px 0;
+}
+
+.booking-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #d4af37;
+}
+
+.booking-form h3 {
+    color: #1a3c8a;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1a3c8a;
+    color: white;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d4af37;
+    color: #1a3c8a;
 }
 
 /* Responsive design */
@@ -178,5 +307,6 @@ footer {
     
     .header-content {
         flex-direction: column;
+        width: 90%;
     }
 }
