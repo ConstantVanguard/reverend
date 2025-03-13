@@ -1,0 +1,115 @@
+from PIL import Image, ImageDraw, ImageFont
+import io
+import base64
+import numpy as np
+
+# Créer des images pour les services
+services = ["mariage", "bapteme", "confirmation", "enterrement", "guidance"]
+colors = [(255, 192, 203), (173, 216, 230), (144, 238, 144), (255, 222, 173), (221, 160, 221)]
+
+# Fonction pour générer une image simple avec du texte
+def create_service_image(service_name, color):
+    img = Image.new('RGB', (400, 300), color)
+    draw = ImageDraw.Draw(img)
+    
+    # Ajouter du texte
+    try:
+        font = ImageFont.truetype("arial.ttf", 40)
+    except:
+        font = ImageFont.load_default()
+    
+    text = service_name.capitalize()
+    text_width = draw.textlength(text, font=font)
+    position = ((400 - text_width) / 2, 130)
+    
+    draw.text(position, text, fill=(0, 0, 0), font=font)
+    
+    # Convertir en base64 pour affichage
+    buffered = io.BytesIO()
+    img.save(buffered, format="JPEG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    
+    return img_str
+
+# Créer une maquette du design du header avec col romain
+def create_header_mockup():
+    # Créer une image pour le header
+    width, height = 800, 150
+    img = Image.new('RGB', (width, height), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    
+    # Dessiner le col romain (noir de chaque côté, blanc au milieu)
+    draw.rectangle([(0, 0), (150, height)], fill=(0, 0, 0))  # Côté gauche noir
+    draw.rectangle([(650, 0), (width, height)], fill=(0, 0, 0))  # Côté droit noir
+    draw.rectangle([(150, 0), (650, height)], fill=(255, 255, 255))  # Milieu blanc
+    
+    # Ajouter une bordure dorée en bas
+    draw.rectangle([(0, height-10), (width, height)], fill=(212, 175, 55))
+    
+    # Ajouter du texte pour montrer l'emplacement du titre
+    try:
+        font = ImageFont.truetype("arial.ttf", 30)
+        small_font = ImageFont.truetype("arial.ttf", 20)
+    except:
+        font = ImageFont.load_default()
+        small_font = ImageFont.load_default()
+    
+    draw.text((400, 50), "Révérend Constant", fill=(0, 0, 0), font=font, anchor="mm")
+    draw.text((400, 90), "Services Religieux Protestants", fill=(0, 0, 0), font=small_font, anchor="mm")
+    
+    # Dessiner un cercle pour représenter l'emplacement du logo
+    draw.ellipse([(180, 30), (240, 90)], outline=(212, 175, 55), width=3)
+    
+    # Convertir en base64 pour affichage
+    buffered = io.BytesIO()
+    img.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    
+    return img_str
+
+# Créer une maquette de la nouvelle mise en page
+def create_layout_mockup():
+    # Créer une image pour la maquette
+    width, height = 800, 1000
+    img = Image.new('RGB', (width, height), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    
+    # Dessiner le header
+    draw.rectangle([(0, 0), (width, 150)], fill=(240, 240, 240))
+    draw.rectangle([(0, 0), (150, 150)], fill=(0, 0, 0))  # Côté gauche noir
+    draw.rectangle([(650, 0), (width, 150)], fill=(0, 0, 0))  # Côté droit noir
+    draw.rectangle([(0, 140), (width, 150)], fill=(212, 175, 55))  # Bordure dorée
+    
+    # Zone de photo plus petite
+    draw.rectangle([(50, 180), (200, 300)], outline=(0, 0, 0))
+    draw.text((125, 240), "Photo", fill=(0, 0, 0), anchor="mm")
+    
+    # Phrase de présentation
+    draw.rectangle([(220, 180), (750, 220)], fill=(245, 245, 245))
+    draw.text((485, 200), "Phrase de présentation courte", fill=(0, 0, 0), anchor="mm")
+    
+    # Onglets des services
+    service_y = 240
+    for i in range(5):
+        draw.rectangle([(220 + i*110, service_y), (320 + i*110, service_y + 40)], outline=(0, 0, 0), fill=(230, 230, 230))
+        draw.text((270 + i*110, service_y + 20), f"Service {i+1}", fill=(0, 0, 0), anchor="mm", font=ImageFont.load_default())
+    
+    # Présentation complète
+    draw.rectangle([(50, 320), (750, 600)], fill=(245, 245, 245))
+    draw.text((400, 460), "Présentation complète", fill=(0, 0, 0), anchor="mm")
+    
+    # Convertir en base64 pour affichage
+    buffered = io.BytesIO()
+    img.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    
+    return img_str
+
+# Générer les maquettes
+header_mockup = create_header_mockup()
+layout_mockup = create_layout_mockup()
+
+print("## Maquette du header avec col romain")
+print(f"![Header Mockup](data:image/png;base64,{header_mockup})")
+print("\n## Maquette de la nouvelle mise en page")
+print(f"![Layout Mockup](data:image/png;base64,{layout_mockup})")
