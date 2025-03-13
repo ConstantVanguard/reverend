@@ -1,4 +1,5 @@
-* {
+# Créer un fichier CSS avec un design plus épuré et liturgique pour l'en-tête
+css_content = """* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,34 +12,13 @@ body {
     line-height: 1.6;
 }
 
-/* Header avec design de col romain */
+/* Header avec design épuré et liturgique */
 header {
     position: relative;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%;
-    height: 100%;
     background-color: black;
-    z-index: -1;
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
-    background-color: black;
-    z-index: -1;
+    border-bottom: 2px solid gold;
 }
 
 .header-content {
@@ -46,32 +26,32 @@ header::after {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: white;
-    padding: 15px;
     margin: 0 auto;
-    width: 50%;
-    border: 3px solid gold;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 1200px;
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 2px solid gold;
+    border: 1px solid gold;
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #1a3c6e; /* Bleu foncé */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-family: 'Harrington', 'Times New Roman', serif;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 h2 {
     color: #1a3c6e;
     margin-bottom: 20px;
     text-align: center;
+    font-family: 'Harrington', 'Times New Roman', serif;
 }
 
 .intro {
@@ -98,9 +78,19 @@ h2 {
     padding: 0 30px;
 }
 
+.welcome-text h2 {
+    font-family: 'Harrington', 'Times New Roman', serif;
+    color: #1a3c6e;
+}
+
 .services {
     padding: 40px;
     background-color: white;
+}
+
+.services h2 {
+    font-family: 'Harrington', 'Times New Roman', serif;
+    color: #1a3c6e;
 }
 
 .service-tabs {
@@ -131,6 +121,7 @@ h2 {
 
 .service-tab h3 {
     color: #1a3c6e;
+    font-family: 'Harrington', 'Times New Roman', serif;
 }
 
 .location {
@@ -139,11 +130,17 @@ h2 {
     text-align: center;
 }
 
+.location h2 {
+    font-family: 'Harrington', 'Times New Roman', serif;
+    color: #1a3c6e;
+}
+
 footer {
-    background-color: #1a3c6e;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
+    border-top: 2px solid gold;
 }
 
 .footer-links {
@@ -154,6 +151,7 @@ footer {
     color: gold;
     margin: 0 15px;
     text-decoration: none;
+    font-family: 'Harrington', 'Times New Roman', serif;
 }
 
 .footer-links a:hover {
@@ -163,12 +161,8 @@ footer {
 /* Responsive design */
 @media (max-width: 768px) {
     .header-content {
-        width: 80%;
         flex-direction: column;
-    }
-    
-    header::before, header::after {
-        width: 15%;
+        gap: 10px;
     }
     
     .intro {
@@ -182,4 +176,122 @@ footer {
     .service-tabs {
         justify-content: center;
     }
-}
+}"""
+
+# Écrire le fichier CSS
+with open("style_epure.css", "w", encoding="utf-8") as f:
+    f.write(css_content)
+
+print("Fichier CSS avec design épuré créé: style_epure.css")
+
+# Créer une image de prévisualisation du design
+import matplotlib.pyplot as plt
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+import io
+import base64
+
+def create_header_mockup():
+    # Créer une image pour le header
+    width, height = 800, 80
+    img = Image.new('RGB', (width, height), (0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    
+    # Dessiner la bordure dorée en bas
+    draw.rectangle([(0, height-2), (width, height)], fill=(212, 175, 55))
+    
+    # Ajouter un cercle pour représenter le logo
+    draw.ellipse([(350, 15), (390, 55)], outline=(212, 175, 55), width=1)
+    
+    # Ajouter du texte pour montrer l'emplacement du titre
+    try:
+        font = ImageFont.truetype("arial.ttf", 24)
+    except:
+        font = ImageFont.load_default()
+    
+    draw.text((450, 35), "RÉVÉREND CONSTANT", fill=(255, 255, 255), font=font, anchor="mm")
+    
+    # Sauvegarder l'image
+    img.save("header_epure_preview.png")
+    print("Image de prévisualisation créée: header_epure_preview.png")
+    
+    # Afficher l'image
+    plt.figure(figsize=(10, 2))
+    plt.imshow(np.array(img))
+    plt.axis('off')
+    plt.title("Prévisualisation du header épuré et liturgique")
+    plt.tight_layout()
+    plt.savefig("header_epure_plot.png")
+    
+    return img
+
+# Créer la prévisualisation
+header_img = create_header_mockup()
+
+# Créer une maquette complète de la page
+def create_full_page_mockup():
+    # Créer une image pour la maquette
+    width, height = 800, 600
+    img = Image.new('RGB', (width, height), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    
+    # Header
+    draw.rectangle([(0, 0), (width, 80)], fill=(0, 0, 0))
+    draw.rectangle([(0, 78), (width, 80)], fill=(212, 175, 55))
+    draw.ellipse([(350, 15), (390, 55)], outline=(212, 175, 55), width=1)
+    
+    try:
+        font_title = ImageFont.truetype("arial.ttf", 24)
+        font_heading = ImageFont.truetype("arial.ttf", 20)
+        font_text = ImageFont.truetype("arial.ttf", 14)
+    except:
+        font_title = ImageFont.load_default()
+        font_heading = ImageFont.load_default()
+        font_text = ImageFont.load_default()
+    
+    draw.text((450, 35), "RÉVÉREND CONSTANT", fill=(255, 255, 255), font=font_title, anchor="mm")
+    
+    # Section intro
+    draw.rectangle([(0, 80), (width, 250)], fill=(249, 249, 249))
+    draw.rectangle([(50, 120), (200, 220)], outline=(0, 0, 0))
+    draw.text((125, 170), "Photo", fill=(0, 0, 0), font=font_text, anchor="mm")
+    
+    draw.text((400, 120), "Bienvenue", fill=(26, 60, 110), font=font_heading, anchor="mm")
+    draw.rectangle([(250, 140), (750, 220)], outline=(220, 220, 220))
+    draw.text((500, 180), "Texte de présentation", fill=(0, 0, 0), font=font_text, anchor="mm")
+    
+    # Section services
+    draw.text((400, 280), "Mes Services", fill=(26, 60, 110), font=font_heading, anchor="mm")
+    
+    # Services icons
+    service_positions = [(100, 330), (250, 330), (400, 330), (550, 330), (700, 330)]
+    for pos in service_positions:
+        draw.rectangle([(pos[0]-50, pos[1]-30), (pos[0]+50, pos[1]+30)], outline=(0, 0, 0))
+    
+    # Footer
+    draw.rectangle([(0, 550), (width, 600)], fill=(0, 0, 0))
+    draw.rectangle([(0, 550), (width, 552)], fill=(212, 175, 55))
+    draw.text((400, 575), "Liens et copyright", fill=(255, 255, 255), font=font_text, anchor="mm")
+    
+    # Sauvegarder l'image
+    img.save("full_page_preview.png")
+    print("Maquette complète créée: full_page_preview.png")
+    
+    # Afficher l'image
+    plt.figure(figsize=(10, 7.5))
+    plt.imshow(np.array(img))
+    plt.axis('off')
+    plt.title("Maquette complète avec design épuré et liturgique")
+    plt.tight_layout()
+    plt.savefig("full_page_plot.png")
+    
+    return img
+
+# Créer la maquette complète
+full_page_img = create_full_page_mockup()
+
+print("\nInstructions pour mettre à jour votre site:")
+print("1. Téléchargez le fichier 'style_epure.css'")
+print("2. Remplacez le contenu de votre fichier CSS actuel (styles.css) par celui-ci")
+print("3. Pour utiliser la police Harrington, vous devrez l'ajouter via @font-face ou utiliser une police web similaire")
+print("4. Attendez quelques minutes pour que GitHub Pages prenne en compte les modifications")
