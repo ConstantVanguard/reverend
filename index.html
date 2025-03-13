@@ -1,85 +1,60 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révérend Constant - Services Religieux</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="container header-content">
-            <img src="logo.png" alt="Logo du Révérend Constant" class="logo">
-            <div class="title">
-                <h1>Révérend Constant</h1>
-                <p>Services Religieux Protestants</p>
-            </div>
-        </div>
-    </header>
-    
-    <nav>
-        <div class="container">
-            <a href="index.html">Accueil</a>
-            <a href="mariage.html">Mariage</a>
-            <a href="bapteme.html">Baptême</a>
-            <a href="confirmation.html">Confirmation</a>
-            <a href="enterrement.html">Enterrement</a>
-            <a href="guidance.html">Guidance Spirituelle</a>
-            <a href="agenda.html">Agenda</a>
-            <a href="donation.html">Faire un don</a>
-        </div>
-    </nav>
-    
-    <div class="container main">
-        <section class="welcome">
-            <h2>Bienvenue</h2>
-            <img src="reverend_enhanced.jpg" alt="Révérend Constant" class="reverend-photo">
-            <p>Je suis le Révérend Constant, pasteur protestant dédié à faire rayonner la foi chrétienne dans le monde.</p>
-            <p>En tant que révérend, j'offre mes services en dehors des églises traditionnelles : à mon domicile pour les baptêmes, confirmations et guidances spirituelles, dans les lieux de votre choix pour les mariages et cérémonies funéraires, ou même par vidéo pour les consultations spirituelles.</p>
-        </section>
-        
-        <section class="services">
-            <div class="service-card">
-                <img src="mariage.jpg" alt="Cérémonie de mariage">
-                <h3>Mariage</h3>
-                <p>Célébration de votre union dans le lieu de votre choix.</p>
-                <a href="mariage.html">En savoir plus</a>
-            </div>
-            
-            <div class="service-card">
-                <img src="bapteme.jpg" alt="Cérémonie de baptême">
-                <h3>Baptême</h3>
-                <p>Accueil dans la communauté chrétienne par le baptême.</p>
-                <a href="bapteme.html">En savoir plus</a>
-            </div>
-            
-            <div class="service-card">
-                <img src="confirmation.jpg" alt="Cérémonie de confirmation">
-                <h3>Confirmation</h3>
-                <p>Affirmation personnelle de la foi et des vœux du baptême.</p>
-                <a href="confirmation.html">En savoir plus</a>
-            </div>
-            
-            <div class="service-card">
-                <img src="enterrement.jpg" alt="Cérémonie funéraire">
-                <h3>Enterrement</h3>
-                <p>Accompagnement spirituel pour les cérémonies funéraires.</p>
-                <a href="enterrement.html">En savoir plus</a>
-            </div>
-            
-            <div class="service-card">
-                <img src="guidance.jpg" alt="Guidance spirituelle">
-                <h3>Guidance Spirituelle</h3>
-                <p>Conseils et accompagnement sur votre chemin spirituel.</p>
-                <a href="guidance.html">En savoir plus</a>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
-        </div>
-    </footer>
-</body>
-</html>
+/* En-tête style col romain avec dorures */
+header {
+    background: linear-gradient(to right, #000000 20%, #ffffff 20%);
+    color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 8px solid #d4af37; /* Bordure dorée plus épaisse */
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #d4af37; /* Seconde ligne dorée */
+    box-shadow: 0 0 10px #d4af37; /* Effet de brillance dorée */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border: 3px solid #d4af37; /* Bordure dorée autour du logo */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Halo doré */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* Ombre dorée */
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.title h1 {
+    color: #000000;
+    text-shadow: 1px 1px 2px #d4af37; /* Ombre de texte dorée */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.title p {
+    color: #1a3c8a;
+    font-style: italic;
+    border-bottom: 2px solid #d4af37; /* Soulignement doré */
+    display: inline-block;
+    padding-bottom: 5px;
+}
