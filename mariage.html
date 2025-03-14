@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariage – Révérend</title>
+  <style>
+    /* Mise en page de base */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      padding: 20px;
+    }
+    header {
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .images {
+      flex: 1 1 25%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .images img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .content {
+      flex: 1 1 70%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    /* Styles pour l’agenda */
+    .agenda input[type="date"] {
+      padding: 5px;
+      font-size: 1em;
+    }
+    .agenda button {
+      padding: 10px 15px;
+      font-size: 1em;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .agenda a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      background: #0070ba;
+      color: #fff;
+      padding: 10px 15px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .images, .content {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mariage Révérend</h1>
+  </header>
+  <main>
+    <div class="container">
+      <!-- Colonne des images -->
+      <div class="images">
+        <img src="image1.jpg" alt="Mariage – Photo 1">
+        <img src="image2.jpg" alt="Mariage – Photo 2">
+        <img src="image3.jpg" alt="Mariage – Photo 3">
+      </div>
+      <!-- Colonne du contenu -->
+      <div class="content">
+        <!-- Présentation -->
+        <section class="presentation">
+          <p>
+            Vous souhaitez vivre un mariage digne des films américains ? Imaginez une cérémonie dans un jardin enchanteur, dans le salon d’un château ou même dans une grange à l’ancienne. En tant que pasteur, j’ai à cœur de vous offrir cette liberté : tout lieu peut être consacré et devenir le cadre d’un mariage chrétien – et à fortiori, protestant – rendant ainsi l’expérience encore plus magique. Bien sûr, il est également possible d’opter pour la traditionnelle église.
+          </p>
+          <p>
+            Cette approche me permet de ne pas avoir à fournir de salle, réduisant ainsi les délais d’attente et évitant de reporter un moment si important, tout en allégeant l’organisation.
+          </p>
+        </section>
+        <!-- Organisation du mariage -->
+        <section class="details">
+          <h2>Organisation du mariage le jour J</h2>
+          <p>
+            L’organisation se déroule de manière fluide et personnalisée : 
+          </p>
+          <ul>
+            <li>Accueil chaleureux et cérémonie personnalisée</li>
+            <li>Célébration en extérieur ou dans un cadre atypique</li>
+            <li>Préparation préalable (virtuelle ou à mon presbytère)</li>
+            <li>Remise d’un certificat officiel enregistré au Livre des Actes</li>
+          </ul>
+        </section>
+        <!-- Tarifs et conditions -->
+        <section class="tarifs">
+          <h2>Tarifs & Conditions</h2>
+          <p>
+            <strong>200€ :</strong> Version classique avec préparation virtuelle, communication des documents, personnalisation de certains chants et vœux, célébration le jour J, remise du certificat et enregistrement.<br>
+            <strong>250€ :</strong> Même formule mais avec fourniture de tout le matériel (hors hôtel).<br>
+            <strong>300€ :</strong> Forfait incluant la préparation à mon presbytère près de Waterloo.<br>
+            <em>Note :</em> Un supplément de 50€ sera appliqué si le lieu de célébration se situe en dehors du Brabant wallon.
+          </p>
+          <p>
+            Pensez à prévoir un témoin par fiancé, un lecteur désigné, une preuve du mariage civil ainsi qu’un hôtel équipé (table pour la Bible, pupitre, système hifi avec micro).
+          </p>
+          <p>
+            J'officie en soutane et selon un rite œcuménique respectant à la fois la liturgie protestante et catholique.
+          </p>
+          <p>
+            Pour toute question ou réservation par téléphone, n’hésitez pas à me contacter par GSM.
+          </p>
+        </section>
+        <!-- Agenda de réservation -->
+        <section class="agenda">
+          <h2>Réservez votre date</h2>
+          <p>
+            Veuillez choisir une date disponible pour votre cérémonie.<br>
+            <em>Attention :</em> Seules les dates à partir de 63 jours dans le futur sont réservables, et je suis disponible uniquement les samedis, dimanches, lundis et mercredis.
+          </p>
+          <input type="date" id="datePicker">
+          <button id="bookButton">Réserver</button>
+          <div id="message" style="margin-top:10px; color: #b00;"></div>
+          <div id="paypalButton" style="display:none;">
+            <a href="https://www.paypal.com/yourpaypallink" target="_blank">Payer l'acompte de 100€ via PayPal</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Révérend – Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour vérifier si la date est disponible
+    function isDateAvailable(date) {
+      const selectedDate = new Date(date);
+      const today = new Date();
+      // Appliquer le délai de 63 jours
+      const minDate = new Date();
+      minDate.setDate(today.getDate() + 63);
+
+      // Vérifier le délai minimal
+      if (selectedDate < minDate) {
+        return false;
+      }
+
+      // Jours autorisés: Dimanche (0), Lundi (1), Mercredi (3) et Samedi (6)
+      const allowedDays = [0, 1, 3, 6];
+      if (!allowedDays.includes(selectedDate.getDay())) {
+        return false;
+      }
+
+      // Liste des dates bloquées (à compléter par l'administrateur au format "YYYY-MM-DD")
+      const blockedDates = ["2025-05-15", "2025-06-20"]; // Exemple
+      const formattedDate = selectedDate.toISOString().split('T')[0];
+      if (blockedDates.includes(formattedDate)) {
+        return false;
+      }
+
+      return true;
+    }
+
+    // Définir la date minimale affichée dans le sélecteur
+    const today = new Date();
+    const minDate = new Date();
+    minDate.setDate(today.getDate() + 63);
+    document.getElementById("datePicker").min = minDate.toISOString().split('T')[0];
+
+    document.getElementById("bookButton").addEventListener("click", function() {
+      const dateValue = document.getElementById("datePicker").value;
+      const messageDiv = document.getElementById("message");
+
+      if (!dateValue) {
+        messageDiv.textContent = "Veuillez sélectionner une date.";
+        document.getElementById("paypalButton").style.display = "none";
+        return;
+      }
+
+      if (isDateAvailable(dateValue)) {
+        messageDiv.style.color = "green";
+        messageDiv.textContent = "Date disponible. Veuillez procéder au paiement de l'acompte de 100€.";
+        document.getElementById("paypalButton").style.display = "block";
+      } else {
+        messageDiv.style.color = "#b00";
+        messageDiv.textContent = "La date sélectionnée n'est pas disponible. Veuillez choisir une autre date.";
+        document.getElementById("paypalButton").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
