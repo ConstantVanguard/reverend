@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier et Réservations - Révérend Constant</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calendar-container {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .reservation-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+        }
+        
+        .paypal-buttons {
+            margin-top: 20px;
+        }
+        
+        .service-info {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+        }
+        
+        .service-info h3 {
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+        
+        .service-info ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        .service-info li {
+            margin-bottom: 10px;
+        }
+        
+        .deposit-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fffaf0;
+            border-left: 4px solid #f6ad55;
+        }
+        
+        .deposit-info p {
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .paypal-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0070ba;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .paypal-button:hover {
+            background-color: #005ea6;
+        }
+        
+        .ceremony-steps {
+            margin-top: 40px;
+        }
+        
+        .ceremony-steps ol {
+            counter-reset: step-counter;
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .ceremony-steps li {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 50px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ceremony-steps li:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: #2c5282;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+        }
+        
+        .ceremony-steps li strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Révérend Constant">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="calendrier.html" class="active">Calendrier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dons.html">Dons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Calendrier et Réservations</h1>
+            <p>Consultez mes disponibilités et réservez une date pour votre cérémonie</p>
+        </section>
+
+        <section class="content">
+            <h2>Calendrier des disponibilités</h2>
+            <p>Consultez mon calendrier ci-dessous pour voir les dates disponibles. Les dates déjà réservées apparaissent en couleur.</p>
+            
+            <div class="calendar-container">
+                <!-- Code d'intégration de Google Calendar -->
+                <iframe src="https://calendar.google.com/calendar/embed?src=constantvanguard%40gmail.com&ctz=Europe%2FBrussels" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+
+            <div class="reservation-section">
+                <h2>Réserver une cérémonie</h2>
+                <p>Pour confirmer votre réservation, un acompte est demandé. Cet acompte sera déduit du montant total de la cérémonie.</p>
+                
+                <div class="deposit-info">
+                    <p>Acompte requis :</p>
+                    <ul>
+                        <li>Mariage : 100€</li>
+                        <li>Autres cérémonies (Baptême, Guidance spirituelle, Service funéraire) : 50€</li>
+                    </ul>
+                </div>
+                
+                <h3>Étape 1 : Remplissez le formulaire de demande</h3>
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Téléphone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Type de cérémonie:</label>
+                        <select id="service" name="service" required onchange="updatePayPalButtons()">
+                            <option value="">Sélectionnez un service</option>
+                            <option value="Mariage">Mariage</option>
+                            <option value="Baptême">Baptême</option>
+                            <option value="Guidance">Guidance spirituelle</option>
+                            <option value="Enterrement">Service funéraire</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date souhaitée:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Informations complémentaires:</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                </form>
+                
+                <h3>Étape 2 : Versez l'acompte pour confirmer votre réservation</h3>
+                <p>Après avoir rempli le formulaire, veuillez verser l'acompte correspondant au service choisi pour confirmer votre réservation.</p>
+                
+                <div id="paypal-buttons" class="paypal-buttons">
+                    <div id="mariage-button" style="display: none;">
+                        <p><strong>Acompte pour Mariage : 100€</strong></p>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VOTRE_ID_BOUTON_MARIAGE&amount=100&currency_code=EUR&item_name=Acompte%20Mariage%20-%20Révérend%20Constant" class="paypal-button" target="_blank">Payer l'acompte via PayPal</a>
+                    </div>
+                    
+                    <div id="other-button" style="display: none;">
+                        <p><strong>Acompte pour Baptême/Guidance/Service funéraire : 50€</strong></p>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VOTRE_ID_BOUTON_AUTRES&amount=50&currency_code=EUR&item_name=Acompte%20Cérémonie%20-%20Révérend%20Constant" class="paypal-button" target="_blank">Payer l'acompte via PayPal</a>
+                    </div>
+                    
+                    <div id="no-selection" style="display: block;">
+                        <p>Veuillez sélectionner un type de cérémonie pour afficher les options de paiement.</p>
+                    </div>
+                </div>
+                
+                <p class="note">Note : Après réception de votre acompte, je vous contacterai dans les 24 heures pour confirmer votre réservation et discuter des détails de la cérémonie.</p>
+            </div>
+            
+            <div class="service-info">
+                <h3>Informations sur les cérémonies</h3>
+                
+                <div class="ceremony-steps">
+                    <h4>Déroulement d'un mariage</h4>
+                    <ol>
+                        <li><strong>Accueil et Introduction</strong> - Bienvenue aux invités et présentation des futurs époux</li>
+                        <li><strong>Lecture Biblique</strong> - Passage choisi par les mariés</li>
+                        <li><strong>Prière Nuptiale</strong> - Homélie sous forme de prière</li>
+                        <li><strong>Chanson des mariés</strong> - Moment musical choisi par le couple</li>
+                        <li><strong>Échange des Vœux</strong> - Engagement des mariés l'un envers l'autre</li>
+                        <li><strong>Échange des Anneaux</strong> - Symbole visible de l'union</li>
+                        <li><strong>Proclamation et Bénédiction</strong> - Déclaration officielle du mariage</li>
+                        <li><strong>Signature du Registre</strong> - Acte officiel avec les témoins</li>
+                        <li><strong>Clôture</strong> - Présentation du couple marié</li>
+                    </ol>
+                    
+                    <p>Pour plus de détails sur le déroulement des cérémonies, n'hésitez pas à me contacter.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo Révérend Constant">
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: constantvanguard@gmail.com</p>
+                <p>Téléphone: Votre numéro</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="calendrier.html">Calendrier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="dons.html">Dons</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction pour mettre à jour les boutons PayPal en fonction du service sélectionné
+        function updatePayPalButtons() {
+            const serviceSelect = document.getElementById('service');
+            const mariageButton = document.getElementById('mariage-button');
+            const otherButton = document.getElementById('other-button');
+            const noSelection = document.getElementById('no-selection');
+            
+            // Cacher tous les boutons
+            mariageButton.style.display = 'none';
+            otherButton.style.display = 'none';
+            noSelection.style.display = 'none';
+            
+            // Afficher le bouton approprié en fonction du service sélectionné
+            if (serviceSelect.value === 'Mariage') {
+                mariageButton.style.display = 'block';
+            } else if (serviceSelect.value === 'Baptême' || serviceSelect.value === 'Guidance' || serviceSelect.value === 'Enterrement') {
+                otherButton.style.display = 'block';
+            } else {
+                noSelection.style.display = 'block';
+            }
+        }
+        
+        // Initialiser les boutons au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePayPalButtons();
+            
+            // Ajouter la date d'aujourd'hui comme date minimale pour le champ de date
+            const dateInput = document.getElementById('date');
+            const today = new Date();
+            
+            // Ajouter 63 jours à la date actuelle pour respecter le délai minimum
+            const minDate = new Date(today);
+            minDate.setDate(today.getDate() + 63);
+            
+            // Formater la date au format YYYY-MM-DD pour l'attribut min
+            const formattedMinDate = minDate.toISOString().split('T')[0];
+            dateInput.min = formattedMinDate;
+            
+            // Ajouter un message d'information sur le délai minimum
+            const dateGroup = dateInput.closest('.form-group');
+            const infoMessage = document.createElement('p');
+            infoMessage.textContent = 'Note: Les réservations ne sont possibles qu\'à partir de 63 jours à compter d\'aujourd\'hui.';
+            infoMessage.style.fontSize = '0.9em';
+            infoMessage.style.color = '#666';
+            dateGroup.appendChild(infoMessage);
+        });
+    </script>
+</body>
+</html>
