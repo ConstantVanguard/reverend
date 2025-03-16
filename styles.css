@@ -40,12 +40,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 10px;
     margin: 0 auto;
     max-width: 1200px;
+    /* Modification: suppression du fond blanc et ajustement de la bordure */
     border: 2px solid #D4AF37; /* Bordure dorée */
     border-radius: 8px;
-    background-color: #FFFFFF;
+    background-color: transparent; /* Fond transparent au lieu de blanc */
 }
 
 header h1 {
