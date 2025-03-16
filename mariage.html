@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Votre Mariage, un Moment Unique, une Promesse Devant Dieu</title>
+  <title>Mariage – Révérend</title>
   <style>
     /* Mise en page de base */
     body {
-      font-family: cinzel;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
@@ -21,10 +21,20 @@
     }
     .container {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       margin: 20px;
     }
+    .images {
+      flex: 1 1 25%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .images img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
     .content {
+      flex: 1 1 70%;
       padding: 10px;
       box-sizing: border-box;
     }
@@ -33,24 +43,6 @@
     }
     section {
       margin-bottom: 20px;
-    }
-    /* Styles pour les images intégrées dans le texte */
-    .paragraph-with-image {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .paragraph-image {
-      width: 30%;
-      margin-right: 20px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .paragraph-text {
-      flex: 1;
-      min-width: 60%;
     }
     /* Styles pour l'agenda */
     .agenda input[type="date"] {
@@ -73,65 +65,51 @@
     }
     /* Responsive */
     @media (max-width: 768px) {
-      .paragraph-with-image {
+      .container {
         flex-direction: column;
       }
-      .paragraph-image {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 15px;
+      .images, .content {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Votre Mariage</h1>
+    <h1>Mariage Révérend</h1>
   </header>
   <main>
     <div class="container">
+      <!-- Colonne des images -->
+      <div class="images">
+        <img src="image1.jpg" alt="Mariage – Photo 1">
+        <img src="image2.jpg" alt="Mariage – Photo 2">
+        <img src="image3.jpg" alt="Mariage – Photo 3">
+      </div>
+      <!-- Colonne du contenu -->
       <div class="content">
-        <!-- Présentation avec image 1 -->
+        <!-- Présentation -->
         <section class="presentation">
-          <div class="paragraph-with-image">
-            <img src="image1.jpg" alt="Mariage – Photo 1" class="paragraph-image">
-            <div class="paragraph-text">
-              <p>
-                Vous souhaitez vivre un mariage digne des films américains ? Imaginez une cérémonie dans un jardin enchanteur, dans le salon d'un château ou même dans une grange à l'ancienne. En tant que pasteur, j'ai à cœur de vous offrir cette liberté... En effet, nous pouvons consacrer tout lieu adapté afin qu'il devienne le cadre d'un mariage chrétien – et à fortiori, protestant – rendant ainsi l'expérience encore plus magique. Bien sûr, il est également possible d'opter pour une église, si tel est votre choix.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Deuxième paragraphe avec image 2 -->
-          <div class="paragraph-with-image">
-            <img src="image2.jpg" alt="Mariage – Photo 2" class="paragraph-image">
-            <div class="paragraph-text">
-              <p>
-                Cette approche plus ouverte me permet de réduire ainsi les délais d'attente et d'éviter de reporter un moment si important, tout en allégeant l'organisation.
-              </p>
-            </div>
-          </div>
+          <p>
+            Vous souhaitez vivre un mariage digne des films américains ? Imaginez une cérémonie dans un jardin enchanteur, dans le salon d'un château ou même dans une grange à l'ancienne. En tant que pasteur, j'ai à cœur de vous offrir cette liberté... En effet, nous pouvons consacrer tout lieu adapté afin qu'il devienne le cadre d'un mariage chrétien – et à fortiori, protestant – rendant ainsi l'expérience encore plus magique. Bien sûr, il est également possible d'opter pour une église, si tel est votre choix.
+          </p>
+          <p>
+            Cette approche plus ouverte me permet de réduire ainsi les délais d'attente et d'éviter de reporter un moment si important, tout en allégeant l'organisation.
+          </p>
         </section>
-        
-        <!-- Organisation du mariage avec image 3 -->
+        <!-- Organisation du mariage -->
         <section class="details">
-          <div class="paragraph-with-image">
-            <img src="image3.jpg" alt="Mariage – Photo 3" class="paragraph-image">
-            <div class="paragraph-text">
-              <h2>Organisation du mariage le jour J</h2>
-              <p>
-                L'organisation se déroule de manière fluide et personnalisée : 
-              </p>
-              <ul>
-                <li>Préparation préalable (virtuelle ou à mon presbytère)</li>
-                <li>Personnalisiation de la Cérémonie</li>
-                <li>Célébration en intérieur ou extérieur</li>
-                <li>Remise de votre certificat de mariage, enregistré au Livre des Actes</li>
-              </ul>
-            </div>
-          </div>
+          <h2>Organisation du mariage le jour J</h2>
+          <p>
+            L'organisation se déroule de manière fluide et personnalisée : 
+          </p>
+          <ul>
+            <li>Préparation préalable (virtuelle ou à mon presbytère)</li>
+            <li>Personnalisiation de la Cérémonie</li>
+            <li>Célébration en intérieur ou extérieur</li>
+            <li>Remise de votre certificat de mariage, enregistré au Livre des Actes</li>
+          </ul>
         </section>
-        
         <!-- Tarifs et conditions -->
         <section class="tarifs">
           <h2>Tarifs & Conditions</h2>
@@ -151,7 +129,6 @@
             N'hésitez pas à me contacter sur mon GSM si vous avez des questions, idéalement par message.
           </p>
         </section>
-        
         <!-- Agenda de réservation -->
         <section class="agenda">
           <h2>Réservez votre date</h2>
