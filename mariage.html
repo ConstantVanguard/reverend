@@ -21,20 +21,10 @@
     }
     .container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       margin: 20px;
     }
-    .images {
-      flex: 1 1 25%;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    .images img {
-      width: 100%;
-      margin-bottom: 10px;
-    }
     .content {
-      flex: 1 1 70%;
       padding: 10px;
       box-sizing: border-box;
     }
@@ -43,6 +33,24 @@
     }
     section {
       margin-bottom: 20px;
+    }
+    /* Styles pour les images intégrées dans le texte */
+    .paragraph-with-image {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .paragraph-image {
+      width: 30%;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .paragraph-text {
+      flex: 1;
+      min-width: 60%;
     }
     /* Styles pour l'agenda */
     .agenda input[type="date"] {
@@ -65,11 +73,13 @@
     }
     /* Responsive */
     @media (max-width: 768px) {
-      .container {
+      .paragraph-with-image {
         flex-direction: column;
       }
-      .images, .content {
-        flex: 1 1 100%;
+      .paragraph-image {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
       }
     }
   </style>
@@ -80,36 +90,48 @@
   </header>
   <main>
     <div class="container">
-      <!-- Colonne des images -->
-      <div class="images">
-        <img src="image1.jpg" alt="Mariage – Photo 1">
-        <img src="image2.jpg" alt="Mariage – Photo 2">
-        <img src="image3.jpg" alt="Mariage – Photo 3">
-      </div>
-      <!-- Colonne du contenu -->
       <div class="content">
-        <!-- Présentation -->
+        <!-- Présentation avec image 1 -->
         <section class="presentation">
-          <p>
-            Vous souhaitez vivre un mariage digne des films américains ? Imaginez une cérémonie dans un jardin enchanteur, dans le salon d'un château ou même dans une grange à l'ancienne. En tant que pasteur, j'ai à cœur de vous offrir cette liberté... En effet, nous pouvons consacrer tout lieu adapté afin qu'il devienne le cadre d'un mariage chrétien – et à fortiori, protestant – rendant ainsi l'expérience encore plus magique. Bien sûr, il est également possible d'opter pour une église, si tel est votre choix.
-          </p>
-          <p>
-            Cette approche plus ouverte me permet de réduire ainsi les délais d'attente et d'éviter de reporter un moment si important, tout en allégeant l'organisation.
-          </p>
+          <div class="paragraph-with-image">
+            <img src="image1.jpg" alt="Mariage – Photo 1" class="paragraph-image">
+            <div class="paragraph-text">
+              <p>
+                Vous souhaitez vivre un mariage digne des films américains ? Imaginez une cérémonie dans un jardin enchanteur, dans le salon d'un château ou même dans une grange à l'ancienne. En tant que pasteur, j'ai à cœur de vous offrir cette liberté... En effet, nous pouvons consacrer tout lieu adapté afin qu'il devienne le cadre d'un mariage chrétien – et à fortiori, protestant – rendant ainsi l'expérience encore plus magique. Bien sûr, il est également possible d'opter pour une église, si tel est votre choix.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Deuxième paragraphe avec image 2 -->
+          <div class="paragraph-with-image">
+            <img src="image2.jpg" alt="Mariage – Photo 2" class="paragraph-image">
+            <div class="paragraph-text">
+              <p>
+                Cette approche plus ouverte me permet de réduire ainsi les délais d'attente et d'éviter de reporter un moment si important, tout en allégeant l'organisation.
+              </p>
+            </div>
+          </div>
         </section>
-        <!-- Organisation du mariage -->
+        
+        <!-- Organisation du mariage avec image 3 -->
         <section class="details">
-          <h2>Organisation du mariage le jour J</h2>
-          <p>
-            L'organisation se déroule de manière fluide et personnalisée : 
-          </p>
-          <ul>
-            <li>Préparation préalable (virtuelle ou à mon presbytère)</li>
-            <li>Personnalisiation de la Cérémonie</li>
-            <li>Célébration en intérieur ou extérieur</li>
-            <li>Remise de votre certificat de mariage, enregistré au Livre des Actes</li>
-          </ul>
+          <div class="paragraph-with-image">
+            <img src="image3.jpg" alt="Mariage – Photo 3" class="paragraph-image">
+            <div class="paragraph-text">
+              <h2>Organisation du mariage le jour J</h2>
+              <p>
+                L'organisation se déroule de manière fluide et personnalisée : 
+              </p>
+              <ul>
+                <li>Préparation préalable (virtuelle ou à mon presbytère)</li>
+                <li>Personnalisiation de la Cérémonie</li>
+                <li>Célébration en intérieur ou extérieur</li>
+                <li>Remise de votre certificat de mariage, enregistré au Livre des Actes</li>
+              </ul>
+            </div>
+          </div>
         </section>
+        
         <!-- Tarifs et conditions -->
         <section class="tarifs">
           <h2>Tarifs & Conditions</h2>
@@ -129,6 +151,7 @@
             N'hésitez pas à me contacter sur mon GSM si vous avez des questions, idéalement par message.
           </p>
         </section>
+        
         <!-- Agenda de réservation -->
         <section class="agenda">
           <h2>Réservez votre date</h2>
