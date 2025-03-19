@@ -4,128 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Révérend Constant - Services Religieux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles de base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
-            font-size: 18px;
-        }
-        
-        /* Header */
-        header {
-            background-color: #000;
-            padding: 1rem 0;
-            position: relative;
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-        
-        .logo {
-            height: 80px;
-            width: auto;
-            border-radius: 50%;
-            background-color: #000;
-            padding: 5px;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-        
-        header h1 {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 36px;
-            margin-left: 15px;
-            color: #fff;
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.7);
-            letter-spacing: 1px;
-            border-bottom: 2px solid #D4AF37;
-            padding-bottom: 5px;
-        }
-        
-        .collar-design {
-            height: 8px;
-            background: linear-gradient(90deg, #000, #D4AF37, #000);
-            margin-top: 5px;
-        }
-        
-        /* Section intro */
-        .intro {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-            background-color: #f9f9f9;
-            border-bottom: 3px solid #D4AF37;
-        }
-        
-        .photo-container {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .profile-photo {
-            max-width: 30%; /* Réduit à 30% */
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: 3px solid #D4AF37;
-        }
-        
-        .welcome-text {
-            flex: 2;
-            min-width: 300px;
-            padding: 20px;
-        }
-        
-        .welcome-text h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #333;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .welcome-text h2:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background-color: #D4AF37;
-        }
-        
-        .welcome-text p {
-            font-size: 20px;
-            line-height: 1.7;
-        }
-        
-        /* Section services */
-        .services {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .services h2 {
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mariage.html">Mariage</a></li>
+                <li><a href="bapteme.html">Baptême</a></li>
+                <li><a href="confirmation.html">Confirmation</a></li>
+                <li><a href="enterrement.html">Funérailles</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dons.html">Faire un don</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="site-title">
+        <h1>Révérend Constant</h1>
+        <p>Au service de la chrétienté et des croyants</p>
+    </div>
+
+    <div class="section-header">
+        <h2>PROFILE</h2>
+    </div>
+
+    <section class="profile-section">
+        <div class="profile-photo-container">
+            <div class="profile-photo-frame">
+                <img src="reverend_enhanced.jpg" alt="Révérend Constant" class="profile-photo">
+            </div>
+        </div>
+        <div class="profile-text">
+            <p>Pasteur protestant, je suis au service de tous les chrétiens qui souhaitent vivre leur foi en respectant tradition et modernité. Ma mission est d'accompagner chacun dans son cheminement spirituel, au travers des Ecritures et des outils offerts par notre Religion.</p>
+            
+            <p>L'expérience acquise au cours des célébrations diverses auxquelles j'ai eu l'honneur de participer m'a enseigné qu'il est fondamental de mettre le respect, l'écoute et la bienveillance au centre de ma pratique. C'est pourquoi je propose des cérémonies personnalisées et authentiques qui correspondent parfaitement à vos attentes et à vos croyances.</p>
+            
+            <p>Mon approche se veut ouverte et inclusive, permettant à chacun de vivre sa spiritualité dans le respect et la dignité. Je suis disponible pour vous accompagner dans tous les moments importants de votre vie spirituelle.</p>
+        </div>
+    </section>
+
+    <div class="section-header">
+        <h2>SERVICES</h2>
+    </div>
+
+    <section class="services-section">
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="mariage.jpg" alt="Mariage">
+                <div class="service-card-content">
+                    <h3>Mariage</h3>
+                    <p>Célébrez votre union dans un cadre personnalisé, respectueux de vos valeurs et de votre spiritualité.</p>
+                    <a href="mariage.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="bapteme.jpg" alt="Baptême">
+                <div class="service-card-content">
+                    <h3>Baptême</h3>
+                    <p>Accueillez votre enfant ou vous-même dans la communauté chrétienne par cette cérémonie sacrée.</p>
+                    <a href="bapteme.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="confirmation.jpg" alt="Confirmation">
+                <div class="service-card-content">
+                    <h3>Confirmation</h3>
+                    <p>Affirmez votre engagement spirituel et votre foi à travers cette étape importante.</p>
+                    <a href="confirmation.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="enterrement.jpg" alt="Funérailles">
+                <div class="service-card-content">
+                    <h3>Funérailles</h3>
+                    <p>Accompagnez dignement vos proches dans leur dernier voyage avec une cérémonie respectueuse.</p>
+                    <a href="enterrement.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="guidance.jpg" alt="Accompagnement Spirituel">
+                <div class="service-card-content">
+                    <h3>Accompagnement Spirituel</h3>
+                    <p>Bénéficiez d'un soutien et d'une écoute dans votre cheminement spirituel personnel.</p>
+                    <a href="guidance.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-header">
+        <h2>LIEU DE CULTE</h2>
+    </div>
+
+    <section class="profile-section">
+        <div class="profile-text" style="text-align: center;">
+            <p>Services disponibles à mon presbytère ou dans le lieu de votre choix.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="agenda.html">Agenda</a>
+            <a href="dons.html">Faire un don</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
