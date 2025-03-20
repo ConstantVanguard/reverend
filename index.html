@@ -65,15 +65,20 @@
         
         /* Section intro */
         .intro {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-            background-color: #f9f9f9;
-            border-bottom: 3px solid #D4AF37; /* Bordure dorée */
-        }
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px; /* Réduit le padding de 40px à 20px */
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-bottom: 3px solid #D4AF37;
+}
+
+.welcome-text p {
+    font-size: 18px; /* Légèrement réduit de 20px à 18px */
+    line-height: 1.5; /* Réduit de 1.7 à 1.5 */
+}
         
         .photo-container {
             flex: 1;
@@ -83,12 +88,12 @@
         }
         
         .profile-photo {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: 3px solid #D4AF37; /* Bordure dorée */
-        }
+    max-width: 67%; /* Réduit à 67% de la taille originale */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid #D4AF37; /* Bordure dorée conservée */
+}
         
         .welcome-text {
             flex: 2;
