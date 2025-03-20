@@ -122,7 +122,7 @@ nav a:hover {
 }
 
 .profile-photo {
-    width: 100%;
+    width: 30%; /* Réduit à 30% comme demandé précédemment */
     max-width: 300px;
     height: auto;
     border-radius: 10px;
@@ -195,7 +195,7 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-.service-card .btn {
+.btn {
     display: block;
     text-align: center;
     background-color: #D4AF37;
@@ -208,7 +208,7 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 
-.service-card .btn:hover {
+.btn:hover {
     background-color: #c4a030;
 }
 
