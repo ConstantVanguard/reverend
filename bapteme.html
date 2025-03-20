@@ -5,7 +5,271 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baptême - Révérend Constant</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques à la page baptême */
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 1rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+            border-radius: 50%;
+            background-color: #000;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin-left: 15px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.7);
+            letter-spacing: 1px;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 5px;
+        }
+        
+        .collar-design {
+            height: 8px;
+            background: linear-gradient(90deg, #000, #D4AF37, #000);
+            margin-top: 5px;
+        }
+        
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .page-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #D4AF37;
+        }
+        
+        /* Layout for content and images */
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .image-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .image-column img {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 3px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .text-column {
+            flex: 2;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            margin: 30px 0 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #D4AF37;
+        }
+        
+        .text-column p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .text-column ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .text-column li {
+            margin-bottom: 10px;
+        }
+        
+        /* Reservation section */
+        .reservation-section {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border: 1px solid #eee;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .reservation-section h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            background-color: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c4a030;
+        }
+        
+        /* PayPal button styling */
+        .paypal-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .paypal-button a {
+            display: inline-block;
+            background-color: #FFD140;
+            color: #000;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .paypal-button a:hover {
+            background-color: #e6bc3a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .footer-links a:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover:after {
+            width: 100%;
+        }
+        
+        footer p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+            }
+            
+            .image-column, .text-column {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,49 +280,91 @@
         <div class="collar-design"></div>
     </header>
 
-    <main>
-        <div class="presentation">
-            <h2>Présentation</h2>
-            <p>Le baptême est une étape spirituelle fondamentale, marquant l'entrée dans la communauté chrétienne. C'est l'ouverture d'une porte vers un chemin que le baptisé choisira ou non de suivre, dans son libre arbitre, mais qui lui est offert pour avancer dans la direction du Christ.</p>
+    <div class="main-content">
+        <h2 class="page-title">Baptême</h2>
+        
+        <div class="content-container">
+            <div class="image-column">
+                <img src="bapteme1.jpg" alt="Baptême – Photo 1">
+                <img src="bapteme2.jpg" alt="Baptême – Photo 2">
+                <img src="bapteme3.jpg" alt="Baptême – Photo 3">
+            </div>
             
-            <p>Les cérémonies se déroulent exclusivement dans mon presbytère, situé à 10 minutes de Waterloo, dans un cadre intime et spirituel.</p>
-            
-            <p>Selon les règles œcuméniques actuelles, les baptêmes protestants effectués selon un rite conforme au rite catholique (comme je le pratique) sont pleinement reconnus par l'Église catholique, et réciproquement.</p>
+            <div class="text-column">
+                <h3 class="section-title">Présentation</h3>
+                <p>
+                    Le baptême est l'un des sacrements les plus importants de la foi chrétienne, symbolisant la renaissance spirituelle et l'entrée dans la communauté des croyants. En tant que pasteur protestant, j'offre un service de baptême intime et personnalisé qui se déroule exclusivement à mon presbytère, un lieu empreint de spiritualité et propice au recueillement, situé à 10 minutes de Waterloo.
+                </p>
+                <p>
+                    Cette cérémonie marque le début d'un cheminement spirituel, que ce soit pour un enfant ou un adulte. Elle représente l'alliance entre Dieu et le baptisé, ainsi que l'engagement de la communauté à l'accompagner dans sa foi.
+                </p>
+                <p>
+                    Le baptême permet de rentrer ou faire rentrer son enfant dans la communauté chrétienne. C'est ouvrir une porte qui mènera vers un chemin que le baptisé prendra ou non, dans son libre arbitre, mais qui lui est offerte ou que la personne s'offre pour avancer dans la direction du Christ.
+                </p>
+                <p>
+                    Selon les règles Œcuméniques actuellement en vigueur, les baptêmes protestants effectués selon un rite conforme au rite catholique (ce qui est mon cas) sont reconnus par l'Église catholique, l'inverse étant également vrai.
+                </p>
+                
+                <h3 class="section-title">Organisation du baptême</h3>
+                <p>
+                    La préparation au baptême commence par l'envoi d'informations sur le fait de baptiser son enfant ou de demander le baptême pour soi, avec les éléments fondamentaux à connaître pour confirmer la demande de baptême.
+                </p>
+                <p>
+                    Le jour J, le déroulement est le suivant :
+                </p>
+                <ul>
+                    <li>Accueil des personnes</li>
+                    <li>Service liturgique organisé par le Révérend</li>
+                    <li>Baptême du candidat au nom du Père, du Fils et du Saint-Esprit</li>
+                    <li>Inscription au Livre des Actes</li>
+                    <li>Remise d'un certificat de baptême</li>
+                </ul>
+                
+                <h3 class="section-title">Tarifs & Conditions</h3>
+                <p>
+                    <strong>50€ par personne :</strong> Ce montant est à payer lors de la réservation (aucun paiement supplémentaire le jour J).
+                </p>
+                <p>
+                    <em>Note importante :</em> Fidèle à l'esprit chrétien d'entraide et de solidarité, je propose des baptêmes gratuits pour les personnes en situation financière difficile. N'hésitez pas à me contacter pour en discuter en toute confidentialité.
+                </p>
+                <p>
+                    Pour le baptême, prévoyez un parrain et/ou une marraine qui seront les témoins spirituels de cet engagement. Si le baptisé est un enfant, les parents s'engagent à l'élever dans la foi chrétienne.
+                </p>
+                <p>
+                    J'officie en soutane et selon un rite œcuménique respectant à la fois la liturgie protestante et catholique, permettant ainsi à des familles de différentes confessions de partager ce moment important.
+                </p>
+                <p>
+                    Pour toute question ou précision, n'hésitez pas à me contacter, de préférence par message.
+                </p>
+                
+                <div class="reservation-section">
+                    <h3>Réservez votre date</h3>
+                    <p>
+                        Veuillez choisir une date disponible pour votre cérémonie de baptême.<br>
+                        <em>Attention :</em> je suis disponible uniquement les lundis, mercredis et samedis.
+                    </p>
+                    
+                    <div class="form-group">
+                        <label for="datePicker">Date souhaitée :</label>
+                        <input type="date" id="datePicker">
+                    </div>
+                    
+                    <button id="bookButton" class="btn">Vérifier la disponibilité</button>
+                    
+                    <div id="message" style="margin-top:15px; font-weight: bold;"></div>
+                    
+                    <div id="paypalButton" class="paypal-button" style="display:none;">
+                        <style>.pp-6D668VX27S8WJ{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                        <form action="https://www.paypal.com/ncp/payment/6D668VX27S8WJ" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                          <input class="pp-6D668VX27S8WJ" type="submit" value="Acompte 50€" />
+                          <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+                          <section> Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="image-gallery">
-            <img src="bapteme1.jpg" alt="Baptême 1">
-            <img src="bapteme2.jpg" alt="Baptême 2">
-            <img src="bapteme3.jpg" alt="Baptême 3">
-        </div>
-
-        <div class="organisation">
-            <h2>Organisation du Baptême</h2>
-            <ul>
-                <li>Envoi préalable d'informations sur la signification du baptême</li>
-                <li>Accueil des personnes le jour J</li>
-                <li>Service liturgique dirigé par le Révérend</li>
-                <li>Baptême au nom du Père, du Fils et du Saint-Esprit</li>
-                <li>Inscription au Livre des Actes</li>
-                <li>Remise du certificat de baptême</li>
-            </ul>
-        </div>
-
-        <div class="tarifs">
-            <h2>Tarifs</h2>
-            <p>50€ par personne (paiement à la réservation)</p>
-            <p><em>Note : Si vous êtes dans le besoin, n'hésitez pas à me contacter pour un baptême gratuit.</em></p>
-        </div>
-
-        <div class="paypal-button">
-            <style>.pp-6D668VX27S8WJ{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-            <form action="https://www.paypal.com/ncp/payment/6D668VX27S8WJ" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-              <input class="pp-6D668VX27S8WJ" type="submit" value="Payer 50€" />
-              <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-              <section> Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-            </form>
-        </div>
-    </main>
+    </div>
 
     <footer>
         <div class="footer-links">
@@ -69,5 +375,66 @@
         </div>
         <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        // Fonction pour vérifier si la date est disponible
+        function isDateAvailable(date) {
+            const selectedDate = new Date(date);
+            const today = new Date();
+            // Appliquer le délai de 63 jours
+            const minDate = new Date();
+            minDate.setDate(today.getDate() + 63);
+
+            // Vérifier le délai minimal
+            if (selectedDate < minDate) {
+                return false;
+            }
+
+            // Jours autorisés: Lundi (1), Mercredi (3) et Samedi (6)
+            const allowedDays = [1, 3, 6];
+            if (!allowedDays.includes(selectedDate.getDay())) {
+                return false;
+            }
+
+            // Liste des dates bloquées (à compléter par l'administrateur au format "YYYY-MM-DD")
+            const blockedDates = ["2025-05-15", "2025-06-20"]; // Exemple
+            const formattedDate = selectedDate.toISOString().split('T')[0];
+            if (blockedDates.includes(formattedDate)) {
+                return false;
+            }
+
+            return true;
+        }
+
+        // Définir la date minimale affichée dans le sélecteur
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const minDate = new Date();
+            minDate.setDate(today.getDate() + 63);
+            document.getElementById("datePicker").min = minDate.toISOString().split('T')[0];
+            
+            document.getElementById("bookButton").addEventListener("click", function() {
+                const dateValue = document.getElementById("datePicker").value;
+                const messageDiv = document.getElementById("message");
+
+                if (!dateValue) {
+                    messageDiv.textContent = "Veuillez sélectionner une date.";
+                    messageDiv.style.color = "#b00";
+                    document.getElementById("paypalButton").style.display = "none";
+                    return;
+                }
+
+                if (isDateAvailable(dateValue)) {
+                    messageDiv.style.color = "green";
+                    messageDiv.textContent = "Date disponible. Veuillez procéder au paiement de l'acompte de 50€.";
+                    document.getElementById("paypalButton").style.display = "block";
+                } else {
+                    messageDiv.style.color = "#b00";
+                    messageDiv.textContent = "La date sélectionnée n'est pas disponible. Veuillez choisir une autre date.";
+                    document.getElementById("paypalButton").style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
