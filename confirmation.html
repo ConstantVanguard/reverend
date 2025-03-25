@@ -5,7 +5,283 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation - Révérend Constant</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 1rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+            border-radius: 50%;
+            background-color: #000;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin-left: 15px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.7);
+            letter-spacing: 1px;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 5px;
+        }
+        
+        .collar-design {
+            height: 8px;
+            background: linear-gradient(90deg, #000, #D4AF37, #000);
+            margin-top: 5px;
+        }
+        
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .page-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #D4AF37;
+        }
+        
+        /* Layout for content and images */
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .image-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .image-column img {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 3px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .text-column {
+            flex: 2;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            margin: 30px 0 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #D4AF37;
+        }
+        
+        .text-column p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .text-column ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .text-column li {
+            margin-bottom: 10px;
+        }
+        
+        /* Reservation section */
+        .reservation-section {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border: 1px solid #eee;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .reservation-section h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            background-color: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c4a030;
+        }
+        
+        /* PayPal button styling */
+        .paypal-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .paypal-button a {
+            display: inline-block;
+            background-color: #FFD140;
+            color: #000;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .paypal-button a:hover {
+            background-color: #e6bc3a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .footer-links a:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover:after {
+            width: 100%;
+        }
+        
+        footer p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+            }
+            
+            .image-column, .text-column {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,14 +296,14 @@
 
     <div class="main-content">
         <h2 class="page-title">Confirmation</h2>
-
+        
         <div class="content-container">
             <div class="image-column">
                 <img src="confirmation1.jpg" alt="Confirmation – Photo 1">
                 <img src="confirmation2.jpg" alt="Confirmation – Photo 2">
                 <img src="confirmation3.jpg" alt="Confirmation – Photo 3">
             </div>
-
+            
             <div class="text-column">
                 <h3 class="section-title">Présentation</h3>
                 <p>
@@ -36,7 +312,7 @@
                 <p>
                     Le processus de confirmation reste identique pour tous, avec des sessions de formation distinctes permettant d'adapter la pédagogie à chaque groupe d'âge.
                 </p>
-
+                
                 <h3 class="section-title">Organisation de la Confirmation</h3>
                 <p>
                     L'organisation se déroule de manière personnalisée :
@@ -47,7 +323,7 @@
                     <li>Célébration en intérieur ou extérieur</li>
                     <li>Remise de votre certificat de confirmation, enregistré au Livre des Actes</li>
                 </ul>
-
+                
                 <h3 class="section-title">Tarifs & Conditions</h3>
                 <p>
                     <strong>250€ :</strong> Prix pour jusqu'à 3 personnes. Pour les groupes, le prix est fixé au moment de la demande.
@@ -58,7 +334,7 @@
                 <p>
                     N'hésitez pas à me contacter sur mon GSM si vous avez des questions, idéalement par message.
                 </p>
-
+                
                 <div class="reservation-section">
                     <h3>Réservez votre date</h3>
                     <p>
