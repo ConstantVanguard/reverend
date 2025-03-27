@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Révérend</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav class="navbar">
+    <nav>
       <div class="logo">
         <a href="index.html">Révérend</a>
       </div>
       <button class="hamburger" id="hamburger">
         ☰
       </button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="bapteme.html">Baptême</a></li>
         <li><a href="confirmation.html">Confirmation</a></li>
         <li><a href="mariage.html">Mariage</a></li>
@@ -29,23 +30,40 @@
   </header>
 
   <main>
-    <section class="hero">
+    <div class="site-title">
       <h1>Bienvenue sur le site du Révérend</h1>
       <p>Découvrez nos services et notre mission.</p>
+    </div>
+
+    <section class="profile-section">
+      <div class="profile-photo-container">
+        <div class="profile-photo-frame">
+          <img src="https://placehold.co/300x400" alt="Révérend" class="profile-photo">
+        </div>
+      </div>
+      <div class="profile-text">
+        <p>Bienvenue sur le site officiel du Révérend. Nous offrons divers services spirituels pour vous accompagner dans les moments importants de votre vie.</p>
+        <p>Notre mission est de vous guider avec bienveillance et respect, quelle que soit votre croyance ou votre parcours.</p>
+      </div>
     </section>
   </main>
 
   <footer>
+    <div class="footer-links">
+      <a href="contact.html">Contact</a>
+      <a href="calendrier.html">Calendrier</a>
+      <a href="dons.html">Dons</a>
+    </div>
     <p>&copy; 2025 Révérend. Tous droits réservés.</p>
   </footer>
 
   <script>
     // Script pour le bouton hamburger
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const navMenu = document.getElementById('nav-menu');
 
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      navMenu.classList.toggle('active');
     });
   </script>
 </body>
