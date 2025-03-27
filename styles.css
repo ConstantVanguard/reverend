@@ -13,7 +13,7 @@ body {
     background-color: #fff;
 }
 
-/* Header */
+/* Header et Navigation */
 header {
     background-color: #000;
     padding: 1rem 0;
@@ -22,22 +22,44 @@ header {
 
 nav {
     display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav ul {
+.logo a {
+    color: #D4AF37;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.nav-menu {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
 }
 
-nav li {
+.nav-menu li {
     margin: 0 15px;
 }
 
-nav a {
+.nav-menu a {
     color: #D4AF37;
     text-decoration: none;
     font-family: 'Cinzel', serif;
@@ -46,7 +68,7 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: #fff;
 }
 
@@ -122,7 +144,7 @@ nav a:hover {
 }
 
 .profile-photo {
-    width: 30%; /* Réduit à 30% comme demandé précédemment */
+    width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 10px;
@@ -257,21 +279,39 @@ footer p {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 99;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
     .profile-section {
         flex-direction: column;
     }
     
     .profile-photo-container, .profile-text {
         flex: 1 1 100%;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav li {
-        margin: 5px 0;
     }
     
     .site-title h1 {
