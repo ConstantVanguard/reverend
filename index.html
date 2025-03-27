@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révérend Constant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Vos styles CSS existants ici -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Révérend</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Votre contenu de page existant ici -->
-    <header>
-        <!-- Contenu de l'en-tête -->
-    </header>
-    
-    <div class="main-content">
-        <!-- Ajoutez ce bloc juste au début de votre contenu principal -->
-        <div class="services-menu" style="display: none; margin: 20px auto; max-width: 90%; background-color: #f9f9f9; border-radius: 8px; padding: 15px; border: 1px solid #eee; border-left: 4px solid #D4AF37;">
-            <h3 style="font-family: 'Cinzel', serif; font-size: 22px; color: #333; margin-bottom: 15px; text-align: center;">Nos Services</h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <a href="mariage.html" style="display: block; background-color: #000; color: #fff; text-decoration: none; padding: 12px 10px; text-align: center; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 14px;">Mariage</a>
-                <a href="bapteme.html" style="display: block; background-color: #000; color: #fff; text-decoration: none; padding: 12px 10px; text-align: center; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 14px;">Baptême</a>
-                <a href="confirmation.html" style="display: block; background-color: #000; color: #fff; text-decoration: none; padding: 12px 10px; text-align: center; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 14px;">Confirmation</a>
-                <a href="enterrement.html" style="display: block; background-color: #000; color: #fff; text-decoration: none; padding: 12px 10px; text-align: center; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 14px;">Funérailles</a>
-                <a href="guidance.html" style="display: block; background-color: #000; color: #fff; text-decoration: none; padding: 12px 10px; text-align: center; border-radius: 4px; font-family: 'Cinzel', serif; font-size: 14px;">Guidance</a>
-            </div>
-        </div>
-        
-        <!-- Reste de votre contenu principal -->
-    </div>
-    
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Accueil</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <p>&copy; 2025 Révérend Constant. Tous droits réservés.</p>
-    </footer>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Révérend</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        ☰
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="bapteme.html">Baptême</a></li>
+        <li><a href="confirmation.html">Confirmation</a></li>
+        <li><a href="mariage.html">Mariage</a></li>
+        <li><a href="enterrement.html">Enterrement</a></li>
+        <li><a href="guidance.html">Guidance</a></li>
+        <li><a href="calendrier.html">Calendrier</a></li>
+        <li><a href="dons.html">Dons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Script simple pour afficher le menu sur mobile -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Vérifier si l'écran est de taille mobile
-            if (window.innerWidth <= 768) {
-                // Afficher le menu des services
-                var servicesMenu = document.querySelector('.services-menu');
-                if (servicesMenu) {
-                    servicesMenu.style.display = 'block';
-                }
-            }
-        });
-    </script>
+  <main>
+    <section class="hero">
+      <h1>Bienvenue sur le site du Révérend</h1>
+      <p>Découvrez nos services et notre mission.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Révérend. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Script pour le bouton hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
