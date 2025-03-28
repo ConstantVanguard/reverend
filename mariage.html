@@ -295,7 +295,27 @@
 </header>
 
     <div class="main-content">
-        <h2 class="page-title">Mariage</h2>
+        <div class="page-title-container">
+            <h2 class="page-title">Mariage</h2>
+            <div class="hamburger-menu">
+                <button id="hamburger-button" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="mobile-menu" class="hidden">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="bapteme.html">Baptême</a></li>
+                        <li><a href="mariage.html">Mariage</a></li>
+                        <li><a href="enterrement.html">Funérailles</a></li>
+                        <li><a href="confirmation.html">Confirmation</a></li>
+                        <li><a href="guidance.html">Accompagnement Spirituel</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         
         <div class="content-container">
             <div class="image-column">
@@ -444,5 +464,21 @@
             });
         });
     </script>
+<script>
+    document.getElementById('hamburger-button').addEventListener('click', function(event) {
+        event.stopPropagation();
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    document.addEventListener('click', function(event) {
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!hamburgerButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>
 </body>
 </html>
